@@ -2,47 +2,35 @@
 
 ## Learning Goals
 
-- Run Ruby code from a file
+- Run Python code from a file
 - Log output to the terminal
-- Run Ruby code from IRB
-- Run RSpec tests in Ruby
+- Run Python code from the interpreter
+- Run ??? tests in Python
 
 ## Introduction
 
-In this lesson, you'll get some practice running Ruby code, and see a few
+In this lesson, you'll get some practice running Python code, and see a few
 different ways to check what your code is doing. Make sure to code along to get
 comfortable in this new environment!
 
-## Creating a Ruby Application
+## Creating a Python Application
 
-Let's dive right in. To get started on any new Ruby application, the first thing
-we need is a file. Create a new file in this lab directory called `app.rb`. In
-this file, add the following:
+Let's dive right in. To get started on any new Python application, the first
+thing we need is a file. Create a new file in this lab directory called
+`app.py`. In this file, add the following:
 
-```rb
-# app.rb
-puts "Hello world!"
+```python
+# app.py
+print("Hello world!")
 ```
 
-`puts` is a built-in Ruby method that will output a string of text to the
-terminal. It's the Ruby equivalent of `console.log()` in JavaScript. It will
+`print` is a built-in Python method that will output a string of text to the
+terminal. It's the Python equivalent of `console.log()` in JavaScript. It will
 print the string "Hello world!" along with a line break at the end.
 
-The line above `puts` is a Ruby comment. In Ruby, any line that starts with a
-`#` won't be executed by the interpreter. This is the Ruby equivalent of `//` in
-JavaScript.
-
-One important thing to note about Ruby methods that we'll explore further: in
-Ruby, using parentheses when invoking a method is optional. You can also write
-the above code like this:
-
-```rb
-# app.rb
-puts("Hello world!")
-```
-
-Both of these examples will do the same thing; but for Rubyists, the first
-syntax is preferred since it is more pleasant to look at.
+The line above `print` is a Python comment. In Python, any line that starts with
+a `#` won't be executed by the interpreter. This is the Python equivalent of
+`//` in JavaScript.
 
 ## Running Ruby Applications
 
