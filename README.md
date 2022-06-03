@@ -53,43 +53,17 @@ Hello world!
 
 Congrats on running your first Python application! 🎉
 
-## Ruby Terminal Output Methods
+## Python Terminal Output Methods
 
-Now that we have a place to write some code, let's explore a few of Ruby's
+Now that we have a place to write some code, let's explore a few of Python's
 built-in methods for displaying info in the terminal so you can easily inspect
 your code as you are writing it.
 
-### Outputting Strings with `puts` and `print`
-
-Ruby has several methods for printing output to the terminal: `puts`, `print`,
-`p`, and `pp`.
-
-`print` and `puts` do almost the same thing; the only difference is that `puts`
-will add a line break at the end of the string. Try updating the code in
-`app.rb` to the following:
-
-```rb
-# app.rb
-puts "Hello world!"
-puts "Hello world!"
-puts "Hello world!"
-```
-
-Run the application with `ruby app.rb`. Then change `puts` to `print` and run
-it again to see the difference in output:
-
-```rb
-# app.rb
-print "Hello world!"
-print "Hello world!"
-print "Hello world!"
-```
-
 ### Inspecting Data with `p` and `pp`
 
-`puts` and `print` are great for working with strings and displaying them in the
-terminal, but it's often helpful to be able to inspect other kinds of data that
-aren't so easily represented as strings.
+`print` is great for working with strings and displaying them in the terminal,
+but it's often helpful to be able to inspect other kinds of data that aren't so
+easily represented as strings.
 
 For example, if we had an array and we wanted to inspect it in the console,
 `puts` might not be the best way.
