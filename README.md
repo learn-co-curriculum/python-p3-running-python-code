@@ -24,7 +24,7 @@ thing we need is a file. Create a new file in this lab directory called
 print("Hello world!")
 ```
 
-`print` is a built-in Python method that will output a string of text to the
+`print` is a built-in Python function that will output a string of text to the
 terminal. It's the Python equivalent of `console.log()` in JavaScript. It will
 print the string "Hello world!" along with a line break at the end.
 
@@ -32,26 +32,26 @@ The line above `print` is a Python comment. In Python, any line that starts with
 a `#` won't be executed by the interpreter. This is the Python equivalent of
 `//` in JavaScript.
 
-## Running Ruby Applications
+## Running Python Applications
 
-Unlike JavaScript, you won't be running Ruby applications in the browser.
-Instead, you'll need to use the Ruby interpreter to run your code from the
+Unlike JavaScript, you won't be running Python applications in the browser.
+Instead, you'll need to use the Python interpreter to run your code from the
 terminal. You can check which version of Ruby you're using with this command:
 
 ```console
-$ ruby -v
-ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x86_64-darwin19]
+$ python --version
+Python 3.8.13
 ```
 
-To run the application, enter the command `ruby filename.rb`, where
-`filename.rb` is the relative path to the file you'd like to run:
+To run the application, enter the command `python filename.py`, where
+`filename.py` is the relative path to the file you'd like to run:
 
 ```console
-$ ruby app.rb
+$ python app.py
 Hello world!
 ```
 
-Congrats on running your first Ruby application! 🎉
+Congrats on running your first Python application! 🎉
 
 ## Ruby Terminal Output Methods
 
