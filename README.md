@@ -24,11 +24,11 @@ thing we need is a file. Create a new file in this lab directory called
 print("Hello world!")
 ```
 
-`print` is a built-in Python function that will output a string of text to the
+`print()` is a built-in Python function that will output a string of text to the
 terminal. It's the Python equivalent of `console.log()` in JavaScript. It will
 print the string "Hello world!" along with a line break at the end.
 
-The line above `print` is a Python comment. In Python, any line that starts with
+The line above `print()` is a Python comment. In Python, any line that starts with
 a `#` won't be executed by the interpreter. This is the Python equivalent of
 `//` in JavaScript.
 
@@ -53,113 +53,94 @@ Hello world!
 
 Congrats on running your first Python application! 🎉
 
-## Python Terminal Output Methods
+## Displaying Data with "print()"
 
 Now that we have a place to write some code, let's explore a few of Python's
-built-in methods for displaying info in the terminal so you can easily inspect
-your code as you are writing it.
+built-in options for displaying data in different ways.
 
-### Inspecting Data with `p` and `pp`
+### Standard print() Statements
 
-`print` is great for working with strings and displaying them in the terminal,
-but it's often helpful to be able to inspect other kinds of data that aren't so
-easily represented as strings.
+By default, `print()` includes a newline character at the end of your string.
+Try entering several `print()` statements in a row in `app.py`:
 
-For example, if we had an array and we wanted to inspect it in the console,
-`puts` might not be the best way.
-
-```rb
-# app.rb
-puts [1, 2, 3]
+```python
+# app.py
+print("Hello world!")
+print("Hello sun!")
+print("Hello sky!")
 ```
 
-When using `puts` on something that isn't already a string, Ruby will coerce the
-data to a string by calling the `.to_s` method. In the case of arrays, this will
-produce the following output, with each element of the array printed to a new
-line in the console:
+What do you see when you execute `app.py` from the command line?
 
 ```console
-$ ruby app.rb
-1
-2
-3
+$ python app.py
+Hello world!
+Hello sun!
+Hello sky!
 ```
 
-This is where the `p` method comes in handy:
+### Choosing your own print() Ending
 
-```rb
-# This is the equivalent of calling:
-# puts [1, 2, 3].inspect
-p [1, 2, 3]
+Let's say you're writing a full paragraph and don't need a newline character
+after every sentence. `print()` can accommodate that through its optional `end`
+parameter. Try modifying your `print()` statements as follows:
+
+```python
+# app.py
+print("Hello world!", end="")
+print("Hello sun!", end=" ")
+print("Hello sky!", end="\n")
 ```
 
-The `p` method will output the data in a nicer format by calling the `.inspect`
-method on our data.
+What do you see when you execute `app.py` from the command line with these new
+`end` strings?
 
 ```console
-$ ruby app.rb
-[1, 2, 3]
+$ python app.py
+Hello world!Hello sun! Hello sky!
 ```
 
-Ruby has one more method, `pp`, for "pretty-printing" complex data, such as
-nested arrays and hashes (the Ruby equivalent of a JavaScript object):
+`end` can be a string of any length, including special characters like the
+newline `\n`.
 
-```rb
-# app.rb
-pp [{ id: 1, hello: "World" }, { id: 2, hello: "Ruby" }, { id: 3, hello: "Moon" }, { id: 4, hello: "Learner" }]
-```
+## Exploring Python with the Python Interpreter
 
-The `pp` method will "pretty-print" these objects by calling the
-`.pretty_inspect` method on our data.
+Python comes with a command line interpreter (often called the "Python shell")
+for running a Python REPL (read-evaluate-print-loop) in the terminal, which
+provides similar functionality to the browser console that you're familiar with
+from JavaScript. Using the Python shell is a great way to quickly test out some
+code, or check your syntax, without needing to run an entire application.
+
+To use the Python shell, go into the terminal and enter `python`:
 
 ```console
-$ ruby app.rb
-[{:id=>1, :hello=>"World"},
- {:id=>2, :hello=>"Ruby"},
- {:id=>3, :hello=>"Moon"},
- {:id=>4, :hello=>"Learner"}]
+$ python
+Python 3.8.13 (default, Jun  2 2022, 15:59:12)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
 ```
 
-## Exploring Ruby with IRB
-
-Ruby comes with a tool called IRB (Interactive Ruby) for running a Ruby REPL
-(read-evaluate-print-loop) in the terminal, which provides similar functionality
-to the browser console that you're familiar with from JavaScript. Using IRB is a
-great way to quickly test out some code, or check your syntax, without needing
-to run an entire application.
-
-To use IRB, go into the terminal and enter `irb`:
+This gives you a prompt where you can enter Python code. Try entering in
+`print("Hello Python shell")`:
 
 ```console
-$ irb
-2.7.3 :001 >
+$ python
+Python 3.8.13 (default, Jun  2 2022, 15:59:12)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello Python shell")
+Hello Python shell
 ```
 
-This gives you a prompt where you can enter Ruby code. Try entering in
-`puts "Hello IRB"`:
+Try running a few more expressions in the Python Shell:
 
 ```console
-2.7.3 :001 > puts "Hello IRB"
-Hello IRB
- => nil
-```
-
-You'll notice that two lines are output: `Hello IRB`, then `=> nil`. The first
-line is the output of the `puts` method; the second line is the **return value**
-of the `puts` method. IRB indicates that this is the return value with the `=>`
-symbol. In Ruby, all methods have a return value. `nil` in this case means "no
-value", similar to `null` in JavaScript.
-
-Try running a few more expressions in IRB:
-
-```console
-> first_number = 7
- => 7
-> first_number
- => 7
-> puts first_number
+>>> first_number = 7
+>>> first_number
 7
- => nil
+>>> print(first_number)
+7
 ```
 
 In the code above, we've declared a **local variable** called `first_number` and
@@ -326,6 +307,6 @@ to get practice with all of them as you progress through this phase!
 
 ## Resources
 
-- [Understanding The Differences Between Puts, Print & P](https://www.rubyguides.com/2018/10/puts-vs-print/)
-- [Ruby in Twenty Minutes](https://www.ruby-lang.org/en/documentation/quickstart/)
-- [RSpec Documentation](https://rspec.info/)
+- [Python print() function](https://www.w3schools.com/python/ref_func_print.asp)
+- [Python Getting Started](https://www.w3schools.com/python/python_getstarted.asp)
+- [pytest Documentation](https://docs.pytest.org/en/7.1.x/)
