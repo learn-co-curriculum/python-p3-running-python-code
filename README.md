@@ -6,7 +6,7 @@
 - Log output to the terminal
 - Run Python code from the interpreter
 - Create a `pipenv` virtual environment
-- Run pytest tests
+- Run `pytest` tests
 
 ## Introduction
 
@@ -153,13 +153,13 @@ You can exit the Python shell by typing `exit()`, or pressing `ctrl + d`.
 
 ## Running pytest Tests
 
-All the lessons in the Python curriculum use the pytest library for testing your
+All the lessons in the Python curriculum use the `pytest` library for testing your
 Python code.
 
 In this lesson, you'll see a `testing` folder with one file, `app_test.py`.
 `app_test.py` is where we've defined tests specifically for this lesson.
 
-pytest is a Python library (the Python equivalent of a npm package) that
+`pytest` is a Python library (the Python equivalent of a npm package) that
 provides a very simple and clean way to write tests.
 
 ### Installing pytest
@@ -200,7 +200,7 @@ $  . /Users/.../.venv/bin/activate
 (phase-3-running-python-code) $
 ```
 
-Let's take one of these tests as an example to see pytest's syntax:
+Let's take one of these tests as an example to see `pytest`'s syntax:
 
 ```python
 def test_app_py_exists():
@@ -243,7 +243,7 @@ FAILED app.py prints "Hello World! Pass this test, please." - FileNotFoundErr...
 ============================== 3 failed in 0.02s ===============================
 ```
 
-pytest provides all kinds of useful information about what went right and wrong
+`pytest` provides all kinds of useful information about what went right and wrong
 with our code, so make sure to spend your time reading all the output here! It
 will tell you:
 
@@ -252,7 +252,7 @@ will tell you:
   the actual output)
 - The line number of the failing test
 
-You can also use the `-x` flag to tell pytest to stop running after the first
+You can also use the `-x` flag to tell `pytest` to stop running after the first
 failing test. This technique is helpful for focusing your attention on one
 problem at a time:
 
