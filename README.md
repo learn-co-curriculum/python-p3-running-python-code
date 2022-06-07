@@ -5,7 +5,8 @@
 - Run Python code from a file
 - Log output to the terminal
 - Run Python code from the interpreter
-- Run pytest tests in Python
+- Create a `pipenv` virtual environment
+- Run pytest tests
 
 ## Introduction
 
@@ -301,7 +302,7 @@ complete!
 
 This lesson covered a good amount of material, but now you should be familiar
 with running code in a Python `pipenv` environment, and using tools like the
-Python Shell and pytest as well as built-in methods like `print()` to
+Python Shell and `pytest` as well as built-in methods like `print()` to
 understand what happens when your Python code is running. You'll need all these
 tools going forward, so make sure to get practice with all of them as you
 progress through this phase!
@@ -310,4 +311,5 @@ progress through this phase!
 
 - [Python print() function](https://www.w3schools.com/python/ref_func_print.asp)
 - [Python Getting Started](https://www.w3schools.com/python/python_getstarted.asp)
+- [pipenv Documentation](https://pipenv.pypa.io/en/latest/)
 - [pytest Documentation](https://docs.pytest.org/en/7.1.x/)
