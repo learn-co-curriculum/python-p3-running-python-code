@@ -36,7 +36,7 @@ a `#` won't be executed by the interpreter. This is the Python equivalent of
 
 Unlike JavaScript, you won't be running Python applications in the browser.
 Instead, you'll need to use the Python interpreter to run your code from the
-terminal. You can check which version of Ruby you're using with this command:
+terminal. You can check which version of Python you're using with this command:
 
 ```console
 $ python --version
@@ -87,9 +87,9 @@ parameter. Try modifying your `print()` statements as follows:
 
 ```python
 # app.py
-print("Hello world!", end="")
-print("Hello sun!", end=" ")
-print("Hello sky!", end="\n")
+print("Hello world!", end=" ")
+print("Hello sun!", end="!! ")
+print("Hello sky!", end="!!!\n")
 ```
 
 What do you see when you execute `app.py` from the command line with these new
@@ -97,7 +97,7 @@ What do you see when you execute `app.py` from the command line with these new
 
 ```console
 $ python app.py
-Hello world!Hello sun! Hello sky!
+Hello world! Hello sun!!! Hello sky!!!
 ```
 
 `end` can be a string of any length, including characters like the newline `\n`.
@@ -214,7 +214,7 @@ Normally, you would have to call the function yourself with
 `test_app_py_exists()`, but in this case `pytest` is calling all `test`
 functions for you.
 
-Clear out the code in `app.py` to start from scratch so we can try getting these
+Delete the file `app.py` to start from scratch so we can try getting these
 tests to pass.
 
 To run the tests, you will simply run `pytest` from inside of your
@@ -222,118 +222,89 @@ To run the tests, you will simply run `pytest` from inside of your
 
 ```console
 $ pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
+collected 3 items
 
-the program
-  has a file app.rb
-  outputs the string "Hello World!" using the puts method (FAILED - 1)
-  outputs the string "Pass this test, please." using the print method (FAILED - 2)
-  outputs the array [1, 2, 3] using the p method (FAILED - 3)
+app.py exists in current directory F                                     [ 33%]
+app.py is executable F                                                   [ 66%]
+app.py prints "Hello World! Pass this test, please." F                   [100%]
 
-Failures:
+=================================== FAILURES ===================================
 
-  1) the program outputs the string "Hello World!" using the puts method
-     Failure/Error: expect { load 'app.rb' }.to output(a_string_including("Hello World!\n")).to_stdout
+...
 
-       expected block to output a string including "Hello World!\n" to stdout, but output nothing
-       Diff:
-       @@ -1 +1 @@
-       -(a string including "Hello World!\n")
-       +""
-
-     # ./spec/app_spec.rb:10:in `block (2 levels) in <top (required)>'
-
-  2) the program outputs the string "Pass this test, please." using the print method
-     Failure/Error: expect { load 'app.rb' }.to output(a_string_including("Pass this test, please.")).to_stdout
-
-       expected block to output a string including "Pass this test, please." to stdout, but output nothing
-       Diff:
-       @@ -1 +1 @@
-       -(a string including "Pass this test, please.")
-       +""
-
-     # ./spec/app_spec.rb:14:in `block (2 levels) in <top (required)>'
-
-  3) the program outputs the array [1, 2, 3] using the p method
-     Failure/Error: expect { load 'app.rb' }.to output(a_string_including("[1, 2, 3]\n")).to_stdout
-
-       expected block to output a string including "[1, 2, 3]\n" to stdout, but output nothing
-       Diff:
-       @@ -1 +1 @@
-       -(a string including "[1, 2, 3]\n")
-       +""
-
-     # ./spec/app_spec.rb:18:in `block (2 levels) in <top (required)>'
-
-Finished in 0.04406 seconds (files took 0.28088 seconds to load)
-4 examples, 3 failures
-
-Failed examples:
-
-rspec ./spec/app_spec.rb:6 # the program outputs the string "Hello World!" using the puts method
-rspec ./spec/app_spec.rb:13 # the program outputs the string "Pass this test, please." using the print method
-rspec ./spec/app_spec.rb:17 # the program outputs the array [1, 2, 3] using the p method
+=========================== short test summary info ============================
+FAILED app.py exists in current directory - AssertionError: assert False
+FAILED app.py is executable - FileNotFoundError: [Errno 2] No such file or di...
+FAILED app.py prints "Hello World! Pass this test, please." - FileNotFoundErr...
+============================== 3 failed in 0.02s ===============================
 ```
 
-RSpec provides all kinds of useful information about what went right and wrong
+pytest provides all kinds of useful information about what went right and wrong
 with our code, so make sure to spend your time reading all the output here! It
 will tell you:
 
-- Which tests passed/didn't passed
+- Which tests passed/didn't pass
 - Why each failing test failed (the difference between the expected output and
   the actual output)
 - The line number of the failing test
 
-You can also use the `--fail-fast`, or `--f-f` flag to tell RSpec to stop running
-after the first failing test. This technique is helpful for focusing your attention
-on one problem at a time:
+You can also use the `-x` flag to tell pytest to stop running after the first
+failing test. This technique is helpful for focusing your attention on one
+problem at a time:
 
 ```console
-$ learn test --f-f
+$ pytest -x
 
-the program
-  has a file app.rb
-  outputs the string "Hello World!" using the puts method (FAILED - 1)
+============================= test session starts ==============================
+platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
+collected 3 items
 
-Failures:
+app.py exists in current directory F
 
-  1) the program outputs the string "Hello World!" using the puts method
-     Failure/Error: expect { load 'app.rb' }.to output(a_string_including("Hello World!\n")).to_stdout
+=================================== FAILURES ===================================
+_________________________ TestAppPy.test_app_py_exists _________________________
 
-       expected block to output a string including "Hello World!\n" to stdout, but output nothing
-       Diff:
-       @@ -1 +1 @@
-       -(a string including "Hello World!\n")
-       +""
+self = <app_test.TestAppPy object at 0x103743a90>
 
-     # ./spec/app_spec.rb:10:in `block (2 levels) in <top (required)>'
+    def test_app_py_exists(self):
+        '''
+        exists in current directory
+        '''
+>       assert(path.exists("app.py"))
+E       AssertionError: assert False
+E        +  where False = <function exists at 0x10292e0e0>('app.py')
+E        +    where <function exists at 0x10292e0e0> = path.exists
 
-Finished in 0.0389 seconds (files took 0.24407 seconds to load)
-2 examples, 1 failure
-
-Failed examples:
-
-rspec ./spec/app_spec.rb:6 # the program outputs the string "Hello World!" using the puts method
+testing/app_test.py:16: AssertionError
+=========================== short test summary info ============================
+FAILED app.py exists in current directory - AssertionError: assert False
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 0.01s ===============================
 ```
 
 ## Instructions
 
-To finish this lab, use the `puts`, `print`, and `p` methods in the `app.rb` file
+To finish this lab, use the `print()` in the `app.py` file
 as described by the tests:
 
-- Use `puts` to display the string `"Hello World!"`
-- Use `print` to display the string `"Pass this test, please."`
-- Use `p` to display the array `[1,2,3]`
+- Use `print()` to display the text on one line: "Hello World! Pass this test, please."
 
-Using `learn test` will run the tests and sync your progress with GitHub and
-Canvas. When your tests are all passing, the lab is complete!
+Using `pytest` will run the tests. After they are passing, sync your progress
+using Git. When your tests are all passing and your work is synced, the lab is
+complete!
 
 ## Conclusion
 
 This lesson covered a good amount of material, but now you should be familiar
-with running code in a Ruby environment, and using tools like IRB and RSpec
-as well as built-in methods like `puts` to understand what happens when your
-Ruby code is running. You'll need all these tools going forward, so make sure
-to get practice with all of them as you progress through this phase!
+with running code in a Python `pipenv` environment, and using tools like the
+Python Shell and pytest as well as built-in methods like `print()` to
+understand what happens when your Python code is running. You'll need all these
+tools going forward, so make sure to get practice with all of them as you
+progress through this phase!
 
 ## Resources
 
