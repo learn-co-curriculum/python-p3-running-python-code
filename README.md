@@ -5,7 +5,7 @@
 - Run Python code from a file
 - Log output to the terminal
 - Run Python code from the interpreter
-- Run ??? tests in Python
+- Run pytest tests in Python
 
 ## Introduction
 
@@ -100,8 +100,7 @@ $ python app.py
 Hello world!Hello sun! Hello sky!
 ```
 
-`end` can be a string of any length, including special characters like the
-newline `\n`.
+`end` can be a string of any length, including characters like the newline `\n`.
 
 ## Exploring Python with the Python Interpreter
 
@@ -137,39 +136,68 @@ Try running a few more expressions in the Python Shell:
 
 ```console
 >>> first_number = 7
->>> first_number
-7
 >>> print(first_number)
 7
 ```
 
 In the code above, we've declared a **local variable** called `first_number` and
-assigned it a value of `7`. Note the difference between just entering
-`first_number` and entering `puts first_number`: in the first case, the **return
-value** is `7`, in the second case, the **return value** is `nil`. Using the
-correct return value will become more important once we start writing methods,
-so remember: the `puts` method **always returns `nil`**.
+assigned it a value of `7`. When we tell the Python shell to `print(first_number)`,
+we see our local variable's value on the next line.
 
-> In Ruby, it's convention to use underscores (\_) to separate words in
+> In Python, it's convention to use underscores (\_) to separate words in
 > variables. This is referred to as **snake case** (as opposed to **camel
 > case**, which is the convention in JavaScript).
 
-You can exit IRB by typing `exit`, or pressing `ctrl + d`.
+You can exit the Python shell by typing `exit()`, or pressing `ctrl + d`.
 
-## Running RSpec Tests
+## Running pytest Tests
 
-All the lessons in the Ruby curriculum use the RSpec library for testing your
-Ruby code.
+All the lessons in the Python curriculum use the pytest library for testing your
+Python code.
 
-In this lesson, you'll see a `spec` folder with two files, `app_spec.rb` and
-`spec_helper.rb`. The `spec_helper.rb` file does a bit of general-purpose setup
-for our tests. `app_spec.rb` is where we've defined tests specifically for this
-lesson.
+In this lesson, you'll see a `testing` folder with one file, `app_test.py`.
+`app_test.py` is where we've defined tests specifically for this lesson.
 
-RSpec is a Ruby gem (the Ruby equivalent of a npm package) that provides a
-domain-specific language, or DSL, that makes it very nice way to write tests.
-The RSpec library was installed on your system as part of installing the
-`learn-co` gem earlier in the program.
+pytest is a Python library (the Python equivalent of a npm package) that
+provides a very simple and clean way to write tests.
+
+### Installing pytest
+
+Each lesson in the Python curriculum will contain a file called `Pipfile`. This
+file contains all of the required Python libraries for your work, and restricts
+them to the repository that you're working in.
+
+To install `pytest` and any other required libraries, simply navigate to a folder
+with a `Pipfile` and enter `pipenv install`:
+
+```console
+$ pipenv install
+Pipfile.lock not found, creating...
+Locking [dev-packages] dependencies...
+Building requirements...
+Resolving dependencies...
+✔ Success!
+Locking [packages] dependencies...
+Building requirements...
+Resolving dependencies...
+✔ Success!
+Updated Pipfile.lock (cb35ed)!
+Installing dependencies from Pipfile.lock (cb35ed)...
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+```
+
+Now that your `pipenv` virtual environment is ready to use, enter `pipenv shell`
+to start working:
+
+```console
+$ pipenv shell
+Launching subshell in virtual environment...
+ . /Users/.../venv/bin/activate
+$  . /Users/.../.venv/bin/activate
+(phase-3-running-python-code) $
+```
 
 Let's take one of these tests as an example to see RSpec's DSL:
 
