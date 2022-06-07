@@ -199,27 +199,29 @@ $  . /Users/.../.venv/bin/activate
 (phase-3-running-python-code) $
 ```
 
-Let's take one of these tests as an example to see RSpec's DSL:
+Let's take one of these tests as an example to see pytest's syntax:
 
-```rb
-it 'outputs the string "Pass this test, please." using the print method' do
-  expect { load 'app.rb' }.to output(a_string_including("Pass this test, please.")).to_stdout
-end
+```python
+def test_app_py_exists():
+    assert(path.exists("app.py"))
 ```
 
-All of this is valid Ruby code, but it should read (more or less) like English:
+`pytest` expects a **function** with `test` in its name within the `testing`
+folder. We will discuss functions later on in this module. For now, all that
+you need to know is that a function performs an action when it's called.
 
-> Expect that loading the `app.rb` file will output a string including the text
-> "Pass this test, please." to the terminal's standard output.
+Normally, you would have to call the function yourself with
+`test_app_py_exists()`, but in this case `pytest` is calling all `test`
+functions for you.
 
-Clear out the code in `app.rb` to start from scratch so we can try getting these
+Clear out the code in `app.py` to start from scratch so we can try getting these
 tests to pass.
 
-To run the tests, you can use either the `rspec` command or `learn test`. Run
-the command, then take a moment to study the output:
+To run the tests, you will simply run `pytest` from inside of your
+`phase-3-running-python-code` directory.
 
 ```console
-$ learn test
+$ pytest
 
 the program
   has a file app.rb
