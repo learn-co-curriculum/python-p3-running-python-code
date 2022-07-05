@@ -2,11 +2,11 @@
 
 ## Learning Goals
 
-- Run Python code from a file
-- Log output to the terminal
-- Run Python code from the interpreter
-- Create a `pipenv` virtual environment
-- Run `pytest` tests
+- Run Python code from a file.
+- Log output to the terminal.
+- Run Python code from the Python shell.
+- Create a `pipenv` virtual environment.
+- Run `pytest` tests.
 
 ***
 
