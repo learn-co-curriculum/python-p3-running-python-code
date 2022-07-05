@@ -8,11 +8,34 @@
 - Create a `pipenv` virtual environment
 - Run `pytest` tests
 
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
+
 ## Introduction
 
 In this lesson, you'll get some practice running Python code, and see a few
 different ways to check what your code is doing. Make sure to code along to get
 comfortable in this new environment!
+
+***
 
 ## Creating a Python Application
 
@@ -32,6 +55,8 @@ print the string "Hello world!" along with a line break at the end.
 The line above `print()` is a Python comment. In Python, any line that starts with
 a `#` won't be executed by the interpreter. This is the Python equivalent of
 `//` in JavaScript.
+
+***
 
 ## Running Python Applications
 
@@ -53,6 +78,8 @@ Hello world!
 ```
 
 Congrats on running your first Python application! 🎉
+
+***
 
 ## Displaying Data with "print()"
 
@@ -80,6 +107,8 @@ Hello sun!
 Hello sky!
 ```
 
+***
+
 ### Choosing your own print() Ending
 
 Let's say you're writing a full paragraph and don't need a newline character
@@ -102,6 +131,8 @@ Hello world! Hello sun!!! Hello sky!!!
 ```
 
 `end` can be a string of any length, including characters like the newline `\n`.
+
+***
 
 ## Exploring Python with the Python Interpreter
 
@@ -151,7 +182,9 @@ we see our local variable's value on the next line.
 
 You can exit the Python shell by typing `exit()`, or pressing `ctrl + d`.
 
-## Running pytest Tests
+***
+
+## Running `pytest` Tests
 
 All the lessons in the Python curriculum use the `pytest` library for testing your
 Python code.
@@ -162,7 +195,9 @@ In this lesson, you'll see a `testing` folder with one file, `app_test.py`.
 `pytest` is a Python library (the Python equivalent of a npm package) that
 provides a very simple and clean way to write tests.
 
-### Installing pytest
+***
+
+### Installing `pytest`
 
 Each lesson in the Python curriculum will contain a file called `Pipfile`. This
 file contains all of the required Python libraries for your work, and restricts
@@ -287,6 +322,8 @@ FAILED app.py exists in current directory - AssertionError: assert False
 ============================== 1 failed in 0.01s ===============================
 ```
 
+***
+
 ## Instructions
 
 To finish this lab, use the `print()` in the `app.py` file
@@ -298,6 +335,8 @@ Using `pytest` will run the tests. After they are passing, sync your progress
 using Git. When your tests are all passing and your work is synced, the lab is
 complete!
 
+***
+
 ## Conclusion
 
 This lesson covered a good amount of material, but now you should be familiar
@@ -306,6 +345,8 @@ Python Shell and `pytest` as well as built-in methods like `print()` to
 understand what happens when your Python code is running. You'll need all these
 tools going forward, so make sure to get practice with all of them as you
 progress through this phase!
+
+***
 
 ## Resources
 
