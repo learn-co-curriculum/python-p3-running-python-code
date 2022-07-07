@@ -127,7 +127,7 @@ What do you see when you execute `app.py` from the command line with these new
 
 ```console
 $ python app.py
-Hello world! Hello sun!!! Hello sky!!!
+Hello world! Hello sun!!! Hello sky!!!!
 ```
 
 `end` can be a string of any length, including characters like the newline `\n`.
