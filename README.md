@@ -40,11 +40,11 @@ comfortable in this new environment!
 ## Creating a Python Application
 
 Let's dive right in. To get started on any new Python application, the first
-thing we need is a file. Create a new file in this lab directory called
+thing we need is a file. Create a new file in the `lib` directory called
 `app.py`. In this file, add the following:
 
 ```python
-# app.py
+# lib/app.py
 print("Hello world!")
 ```
 
@@ -73,7 +73,7 @@ To run the application, enter the command `python filename.py`, where
 `filename.py` is the relative path to the file you'd like to run:
 
 ```console
-$ python app.py
+$ python lib/app.py
 Hello world!
 ```
 
@@ -89,19 +89,19 @@ built-in options for displaying data in different ways.
 ### Standard print() Statements
 
 By default, `print()` includes a newline character at the end of your string.
-Try entering several `print()` statements in a row in `app.py`:
+Try entering several `print()` statements in a row in `lib/app.py`:
 
 ```python
-# app.py
+# lib/app.py
 print("Hello world!")
 print("Hello sun!")
 print("Hello sky!")
 ```
 
-What do you see when you execute `app.py` from the command line?
+What do you see when you execute `lib/app.py` from the command line?
 
 ```console
-$ python app.py
+$ python lib/app.py
 Hello world!
 Hello sun!
 Hello sky!
@@ -116,17 +116,17 @@ after every sentence. `print()` can accommodate that through its optional `end`
 parameter. Try modifying your `print()` statements as follows:
 
 ```python
-# app.py
+# lib/app.py
 print("Hello world!", end=" ")
 print("Hello sun!", end="!! ")
 print("Hello sky!", end="!!!\n")
 ```
 
-What do you see when you execute `app.py` from the command line with these new
+What do you see when you execute `lib/app.py` from the command line with these new
 `end` strings?
 
 ```console
-$ python app.py
+$ python lib/app.py
 Hello world! Hello sun!!! Hello sky!!!!
 ```
 
@@ -239,7 +239,7 @@ Let's take one of these tests as an example to see `pytest`'s syntax:
 
 ```python
 def test_app_py_exists():
-    assert(path.exists("app.py"))
+    assert(path.exists("lib/app.py"))
 ```
 
 `pytest` expects a **function** with `test` in its name within the `testing`
@@ -250,7 +250,7 @@ Normally, you would have to call the function yourself with
 `test_app_py_exists()`, but in this case `pytest` is calling all `test`
 functions for you.
 
-Delete the file `app.py` to start from scratch so we can try getting these
+Delete the file `lib/app.py` to start from scratch so we can try getting these
 tests to pass.
 
 To run the tests, you will simply run `pytest` from inside of your
@@ -263,18 +263,18 @@ platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
 rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
 collected 3 items
 
-app.py exists in current directory F                                     [ 33%]
-app.py is executable F                                                   [ 66%]
-app.py prints "Hello World! Pass this test, please." F                   [100%]
+lib/app.py exists in lib directory F                                         [ 33%]
+lib/app.py is executable F                                                   [ 66%]
+lib/app.py prints "Hello World! Pass this test, please." F                   [100%]
 
 =================================== FAILURES ===================================
 
 ...
 
 =========================== short test summary info ============================
-FAILED app.py exists in current directory - AssertionError: assert False
-FAILED app.py is executable - FileNotFoundError: [Errno 2] No such file or di...
-FAILED app.py prints "Hello World! Pass this test, please." - FileNotFoundErr...
+FAILED lib/app.py exists in lib directory - AssertionError: assert False
+FAILED lib/app.py is executable - FileNotFoundError: [Errno 2] No such file or di...
+FAILED lib/app.py prints "Hello World! Pass this test, please." - FileNotFoundErr...
 ============================== 3 failed in 0.02s ===============================
 ```
 
@@ -299,7 +299,7 @@ platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
 rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
 collected 3 items
 
-app.py exists in current directory F
+lib/app.py exists in lib directory F
 
 =================================== FAILURES ===================================
 _________________________ TestAppPy.test_app_py_exists _________________________
@@ -308,16 +308,16 @@ self = <app_test.TestAppPy object at 0x103743a90>
 
     def test_app_py_exists(self):
         '''
-        exists in current directory
+        exists in lib directory
         '''
->       assert(path.exists("app.py"))
+>       assert(path.exists("lib/app.py"))
 E       AssertionError: assert False
-E        +  where False = <function exists at 0x10292e0e0>('app.py')
+E        +  where False = <function exists at 0x10292e0e0>('lib/app.py')
 E        +    where <function exists at 0x10292e0e0> = path.exists
 
 testing/app_test.py:16: AssertionError
 =========================== short test summary info ============================
-FAILED app.py exists in current directory - AssertionError: assert False
+FAILED lib/app.py exists in lib directory - AssertionError: assert False
 !!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
 ============================== 1 failed in 0.01s ===============================
 ```
@@ -326,7 +326,7 @@ FAILED app.py exists in current directory - AssertionError: assert False
 
 ## Instructions
 
-To finish this lab, use the `print()` in the `app.py` file
+To finish this lab, use the `print()` in the `lib/app.py` file
 as described by the tests:
 
 - Use `print()` to display the text on one line: "Hello World! Pass this test, please."
