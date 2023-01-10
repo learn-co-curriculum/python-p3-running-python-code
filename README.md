@@ -40,7 +40,7 @@ comfortable in this new environment!
 ## Creating a Python Application
 
 Let's dive right in. To get started on any new Python application, the first
-thing we need is a file. Create a new file in the `lib` directory called
+thing we need is a file. Create a new file in the `lib/` directory called
 `app.py`. In this file, add the following:
 
 ```python
@@ -102,9 +102,9 @@ What do you see when you execute `lib/app.py` from the command line?
 
 ```console
 $ python lib/app.py
-Hello world!
-Hello sun!
-Hello sky!
+# => Hello world!
+# => Hello sun!
+# => Hello sky!
 ```
 
 ***
@@ -115,7 +115,7 @@ Let's say you're writing a full paragraph and don't need a newline character
 after every sentence. `print()` can accommodate that through its optional `end`
 parameter. Try modifying your `print()` statements as follows:
 
-```python
+```py
 # lib/app.py
 print("Hello world!", end=" ")
 print("Hello sun!", end="!! ")
@@ -127,7 +127,7 @@ What do you see when you execute `lib/app.py` from the command line with these n
 
 ```console
 $ python lib/app.py
-Hello world! Hello sun!!! Hello sky!!!!
+# => Hello world! Hello sun!!! Hello sky!!!!
 ```
 
 `end` can be a string of any length, including characters like the newline `\n`.
@@ -161,7 +161,7 @@ Python 3.8.13 (default, Jun  2 2022, 15:59:12)
 [Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print("Hello Python shell")
-Hello Python shell
+# => Hello Python shell
 ```
 
 Try running a few more expressions in the Python Shell:
@@ -169,14 +169,14 @@ Try running a few more expressions in the Python Shell:
 ```console
 >>> first_number = 7
 >>> print(first_number)
-7
+# => 7
 ```
 
 In the code above, we've declared a **local variable** called `first_number` and
 assigned it a value of `7`. When we tell the Python shell to `print(first_number)`,
 we see our local variable's value on the next line.
 
-> In Python, it's convention to use underscores (\_) to separate words in
+> In Python, it's convention to use underscores ( \_ ) to separate words in
 > variables. This is referred to as **snake case** (as opposed to **camel
 > case**, which is the convention in JavaScript).
 
@@ -189,10 +189,10 @@ You can exit the Python shell by typing `exit()`, or pressing `ctrl + d`.
 All the lessons in the Python curriculum use the `pytest` library for testing your
 Python code.
 
-In this lesson, you'll see a `testing` folder with one file, `app_test.py`.
+In this lesson, you'll see a `testing/` folder with one file, `app_test.py`.
 `app_test.py` is where we've defined tests specifically for this lesson.
 
-`pytest` is a Python library (the Python equivalent of a npm package) that
+`pytest` is a Python library (the Python equivalent of an npm package) that
 provides a very simple and clean way to write tests.
 
 ***
@@ -329,7 +329,8 @@ FAILED lib/app.py exists in lib directory - AssertionError: assert False
 To finish this lab, use the `print()` in the `lib/app.py` file
 as described by the tests:
 
-- Use `print()` to display the text on one line: "Hello World! Pass this test, please."
+- Use `print()` to display the text on one line: "Hello World! Pass this test,
+  please."
 
 Using `pytest` will run the tests. After they are passing, sync your progress
 using Git. When your tests are all passing and your work is synced, the lab is
