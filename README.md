@@ -232,7 +232,7 @@ $ pipenv shell
 Launching subshell in virtual environment...
  . /Users/.../venv/bin/activate
 $  . /Users/.../.venv/bin/activate
-(phase-3-running-python-code) $
+(python-p3-running-python-code) $
 ```
 
 Let's take one of these tests as an example to see `pytest`'s syntax:
@@ -254,13 +254,13 @@ Delete the file `lib/app.py` to start from scratch so we can try getting these
 tests to pass.
 
 To run the tests, you will simply run `pytest` from inside of your
-`phase-3-running-python-code` directory.
+`python-p3-running-python-code` directory.
 
 ```console
 $ pytest
 ============================= test session starts ==============================
 platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
-rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
+rootdir: /Users/benbotsford/Documents/python-p3-running-python-code
 collected 3 items
 
 lib/app.py exists in lib directory F                                         [ 33%]
@@ -296,7 +296,7 @@ $ pytest -x
 
 ============================= test session starts ==============================
 platform darwin -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
-rootdir: /Users/benbotsford/Documents/phase-3-running-python-code
+rootdir: /Users/benbotsford/Documents/python-p3-running-python-code
 collected 3 items
 
 lib/app.py exists in lib directory F
