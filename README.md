@@ -101,7 +101,7 @@ print("Hello sky!")
 What do you see when you execute `lib/app.py` from the command line?
 
 ```console
-$ python lib/app.py
+$ python3 lib/app.py
 # => Hello world!
 # => Hello sun!
 # => Hello sky!
@@ -126,7 +126,7 @@ What do you see when you execute `lib/app.py` from the command line with these n
 `end` strings?
 
 ```console
-$ python lib/app.py
+$ python3 lib/app.py
 # => Hello world! Hello sun!!! Hello sky!!!!
 ```
 
@@ -145,9 +145,8 @@ code, or check your syntax, without needing to run an entire application.
 To use the Python shell, go into the terminal and enter `python`:
 
 ```console
-$ python
-Python 3.8.13 (default, Jun  2 2022, 15:59:12)
-[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
+$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
@@ -156,10 +155,10 @@ This gives you a prompt where you can enter Python code. Try entering in
 `print("Hello Python shell")`:
 
 ```console
-$ python
-Python 3.8.13 (default, Jun  2 2022, 15:59:12)
-[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
+$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28)
 Type "help", "copyright", "credits" or "license" for more information.
+>>>
 >>> print("Hello Python shell")
 # => Hello Python shell
 ```
